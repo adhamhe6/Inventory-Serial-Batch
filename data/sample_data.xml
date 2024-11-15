@@ -1,0 +1,76 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Sample Products -->
+        <record id="product_template_aspirin" model="product.template">
+            <field name="name">Aspirin 500mg</field>
+            <field name="tracking_type">serial</field>
+        </record>
+
+        <record id="product_template_amoxicillin" model="product.template">
+            <field name="name">Amoxicillin 250mg</field>
+            <field name="tracking_type">batch</field>
+        </record>
+
+        <record id="product_template_paracetamol" model="product.template">
+            <field name="name">Paracetamol 1000mg</field>
+            <field name="tracking_type">none</field>
+        </record>
+
+        <record id="product_template_ibuprofen" model="product.template">
+            <field name="name">Ibuprofen 400mg</field>
+            <field name="tracking_type">serial</field>
+        </record>
+
+        <record id="product_template_omeprazole" model="product.template">
+            <field name="name">Omeprazole 20mg</field>
+            <field name="tracking_type">batch</field>
+        </record>
+
+        <!-- Sample Batches -->
+        <record id="product_batch_001" model="product.batch">
+            <field name="name">BATCH-001</field>
+            <field name="product_id" ref="product_template_aspirin"/>
+            <field name="quantity">100</field>
+            <field name="expiry_date">2025-12-31</field>
+            <field name="location_id" ref="stock.stock_location_stock"/>
+        </record>
+
+        <record id="product_batch_002" model="product.batch">
+            <field name="name">BATCH-002</field>
+            <field name="product_id" ref="product_template_amoxicillin"/>
+            <field name="quantity">50</field>
+            <field name="expiry_date">2024-06-30</field>
+            <field name="location_id" ref="stock.stock_location_stock"/>
+        </record>
+
+        <record id="product_batch_003" model="product.batch">
+            <field name="name">BATCH-003</field>
+            <field name="product_id" ref="product_template_omeprazole"/>
+            <field name="quantity">80</field>
+            <field name="expiry_date">2025-05-15</field>
+            <field name="location_id" ref="stock.stock_location_stock"/>
+        </record>
+
+        <!-- Sample Serial Numbers -->
+        <record id="product_serial_0001" model="product.serial">
+            <field name="name">SERIAL-0001</field>
+            <field name="product_id" ref="product_template_aspirin"/>
+            <field name="location_id" ref="stock.stock_location_stock"/>
+            <field name="status">available</field>
+        </record>
+
+        <record id="product_serial_0002" model="product.serial">
+            <field name="name">SERIAL-0002</field>
+            <field name="product_id" ref="product_template_ibuprofen"/>
+            <field name="location_id" ref="stock.stock_location_stock"/>
+            <field name="status">sold</field>
+        </record>
+
+        <record id="product_serial_0003" model="product.serial">
+            <field name="name">SERIAL-0003</field>
+            <field name="product_id" ref="product_template_ibuprofen"/>
+            <field name="location_id" ref="stock.stock_location_stock"/>
+            <field name="status">reserved</field>
+        </record>
+    </data>
+</odoo>

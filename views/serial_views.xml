@@ -1,0 +1,31 @@
+<odoo>
+    <record id="view_serial_tree" model="ir.ui.view">
+        <field name="name">product.serial.tree</field>
+        <field name="model">product.serial</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="status"/>
+                <field name="location_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_serial_form" model="ir.ui.view">
+        <field name="name">product.serial.form</field>
+        <field name="model">product.serial</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="product_id"/>
+                        <field name="status"/>
+                        <field name="location_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

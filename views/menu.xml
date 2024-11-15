@@ -1,0 +1,30 @@
+<odoo>
+    <!-- Window Actions for Batches -->
+    <record id="action_product_batch" model="ir.actions.act_window">
+        <field name="name">Batches</field>
+        <field name="res_model">product.batch</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No batches found.
+            </p>
+        </field>
+    </record>
+
+    <!-- Window Actions for Serial Numbers -->
+    <record id="action_product_serial" model="ir.actions.act_window">
+        <field name="name">Serial Numbers</field>
+        <field name="res_model">product.serial</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No serial numbers found.
+            </p>
+        </field>
+    </record>
+
+    <!--Menus-->
+    <menuitem id="menu_inventory_management" name="Inventory Management"/>
+    <menuitem id="menu_batch_management" name="Batches" parent="menu_inventory_management" action="action_product_batch"/>
+    <menuitem id="menu_serial_management" name="Serial Numbers" parent="menu_inventory_management" action="action_product_serial"/>
+</odoo>

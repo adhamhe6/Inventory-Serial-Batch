@@ -1,0 +1,10 @@
+<odoo>
+    <data noupdate="1">
+        <record id="seq_product_serial" model="ir.sequence">
+            <field name="name">Product Serial</field>
+            <field name="code">product.serial</field>
+            <field name="prefix">SERIAL-</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,32 @@
+<odoo>
+    <template id="report_product_batch">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>Product Batch Report</h2>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Batch Number</th>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Expiry Date</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="doc_ids" t-as="batch">
+                            <t t-set="batch_record" t-value="env['product.batch'].browse(batch)"/>
+                            <tr>
+                                <td><t t-esc="batch_record.name"/></td>
+                                <td><t t-esc="batch_record.product_id.name"/></td>
+                                <td><t t-esc="batch_record.quantity"/></td>
+                                <td><t t-esc="batch_record.expiry_date"/></td>
+                                <td><t t-esc="batch_record.location_id.name"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>
